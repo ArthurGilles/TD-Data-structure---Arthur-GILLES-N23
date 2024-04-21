@@ -46,9 +46,12 @@ class targetGUI:
         self.root.mainloop()
 
     def drawBullet(self,x,y):
+        """Function that draws a bullet at a given position"""
         self.canvas.create_oval(x-BULLET_RADIUS, y-BULLET_RADIUS, x+BULLET_RADIUS, y+BULLET_RADIUS, outline='black', fill="black")
     
     def shootBullet(self,x,y):
+        """Function that displays a bullet on the target, and adds the corresponding
+        number of points to the score, at a given (x,y) position"""
         d = pow(pow(x-WIDTH/2,2)+pow(y-HEIGHT/2,2),1/2)
         self.drawBullet(x,y)
         if d < D/2:
@@ -58,6 +61,8 @@ class targetGUI:
         self.scoreLabel.config(text= f"Score : {self.score}")
     
     def fire(self,n):
+        """Function that creates n random positions (x,y) and shoots n bullets at 
+        these positions"""
         for i in range(n):
             x = random()*(WIDTH-BULLET_RADIUS*2)+BULLET_RADIUS
             y = random()*(HEIGHT-BULLET_RADIUS*2)+BULLET_RADIUS
