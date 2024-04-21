@@ -36,8 +36,8 @@ class targetGUI:
         self.quitButton = Button(self.root, text='Quitter',command=self.root.destroy)
         self.quitButton.pack(side=RIGHT)
     
-        self.fire_but = Button(self.root, text='Feu !',command=lambda : self.fire(BULLETS_SHOT))
-        self.fire_but.pack(side=LEFT)
+        self.fireButton = Button(self.root, text='Feu !',command=lambda : self.fire(BULLETS_SHOT))
+        self.fireButton.pack(side=LEFT)
 
         self.scoreLabel = Label(self.root, text=f"Score : {self.score}")
         self.scoreLabel.pack(side = BOTTOM)
